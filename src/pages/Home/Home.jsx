@@ -3,10 +3,12 @@ import escritorio from "../../assets/escritorio.png";
 import codando from "../../assets/codando.png";
 import proxpag from "../../assets/proxpage.png";
 import Marcado from "../../assets/marcado.png";
+import Cards from "../../components/Cards.jsx";
 
 export default function Home() {
   return (
     <section className="flex justify-center w-[100vw] flex-col items-center">
+      
       <Inicio/>
 
       <div className="flex flex-row justify-center gap-50 mt-20 border border-[#4C5445] py-10 w-[75rem] rounded-4xl bg-[radial-gradient(circle_at_left,_rgba(84,15,101,0.3)_0%,_transparent_80%)]">
@@ -58,18 +60,29 @@ export default function Home() {
       </div>
       </div>
     
-      <div className="flex flex-col mt-28 mb-20">
-        <div className="flex flex-row justify-between w-[75rem]">
-          <div className="">
-            <h2  className="relative w-95 z-10">Confira os perfis <img className="absolute top-0 right-0 -z-10 h-[3.8rem] w-[14rem]" src={Marcado} alt="marcado da frase"/></h2>
+      <div className=" mt-20 bg-[#222222] pt-15 w-[100%] flex flex-col items-center pb-15 rounded-4xl border border-[#3A3A3C]">
+        <div className="flex flex-col">
+          <div className="flex flex-row justify-between w-[75rem] mb-15">
+            <div className="">
+              <h2  className="relative w-95 z-10">Confira os perfis <img className="absolute top-0 right-0 -z-10 h-[3.8rem] w-[14rem]" src={Marcado} alt="marcado da frase"/></h2>
+            </div>
+            <div>
+              <button className="flex w-[12.18rem] h-[3.5rem] bg-white text-[#0A0A0A] flex items-center justify-between px-3 rounded-full pl-10">Ver todos <div className="bg-[#9A4FF5] rounded-full h-[2.37rem] w-[2.37rem] flex justify-center items-center"><img src={proxpag} alt="" /></div></button>
+            </div>
           </div>
-          <div>
-            <button className="flex w-[12.18rem] h-[3.5rem] bg-white text-[#0A0A0A] flex items-center justify-between px-3 rounded-full pl-10">Ver todos <div className="bg-[#9A4FF5] rounded-full h-[2.37rem] w-[2.37rem] flex justify-center items-center"><img src={proxpag} alt="" /></div></button>
-          </div>
-        </div>
-
         
+          <div className="grid grid-cols-3 gap-6">
+            <Cards/>
+            <Cards/>
+            <Cards/>
+            <Cards/>
+            <Cards/>
+            <Cards/>
+          </div>
+        </div> 
       </div>
+
+      
 
     </section>
     
