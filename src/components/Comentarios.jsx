@@ -1,4 +1,3 @@
-import Icon from "../assets/Icon.png";
 import Citacao from "../assets/citacao.png";
 import Iconwhite from "../assets/Iconwhite.png";
 
