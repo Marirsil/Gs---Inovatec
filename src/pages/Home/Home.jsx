@@ -7,8 +7,9 @@ import Cards from "../../components/Cards.jsx";
 import Comentarios from "../../components/Comentarios.jsx";
 import Passar from "../../assets/Passar.png";
 import Passare from "../../assets/PassarE.png";
-import Flag from "../../assets/Banner.svg";
+import Banner from "../../assets/Banner.svg";
 import Final from "../../assets/Final.png";
+import Footer from "../../components/Footer.jsx";
 
 export default function Home() {
   return (
@@ -72,7 +73,7 @@ export default function Home() {
               <h2  className="relative w-95 z-10">Confira os perfis <img className="absolute top-0 right-0 -z-10 h-[3.8rem] w-[14rem]" src={Marcado} alt="marcado da frase"/></h2>
             </div>
             <div>
-              <button className="flex w-[12.18rem] h-[3.5rem] bg-white text-[#0A0A0A] flex items-center justify-between px-3 rounded-full pl-10">Ver todos <div className="bg-[#9A4FF5] rounded-full h-[2.37rem] w-[2.37rem] flex justify-center items-center"><img src={proxpag} alt="" /></div></button>
+              <button className="flex w-[12.18rem] h-[3.5rem] bg-white text-[#0A0A0A] items-center justify-between px-3 rounded-full pl-10">Ver todos <div className="bg-[#9A4FF5] rounded-full h-[2.37rem] w-[2.37rem] flex justify-center items-center"><img src={proxpag} alt="" /></div></button>
             </div>
           </div>
         
@@ -99,11 +100,12 @@ export default function Home() {
       <button className=" text-black border border-[#FEFEFE] h-[2.7rem] w-[2.7rem] flex rounded-full justify-center items-center"><img src={Passar} alt="" /></button>
     </div>
 
-    <div className="w-{1550px} mb-10">
-      <img src={Flag} alt="" />
+    <div className="w-screen">
+      <img className="w-screen h-auto" src={Banner} alt="Banner com nomes de cursos" />
     </div>
 
-    <div className="flex flex-row items-center justify-between w-[75rem] mb-20">
+
+    <div className="flex flex-row items-center justify-between w-[75rem]">
       <div className="flex flex-col">
         <h2>Fale Conosco!</h2>
         <p className="w-142 mt-5 mb-10">Sua opinião importa para nós. Envie sugestões, dúvidas ou melhorias para ajudar a tornar a InovaTec uma rede ainda mais útil e conectada. Estamos aqui para ouvir e aprimorar cada detalhe.</p>
@@ -112,6 +114,10 @@ export default function Home() {
       <div>
         <img src={Final} alt="" />
       </div>
+    </div>
+
+    <div>
+      <Footer/>
     </div>
 
     </section>
