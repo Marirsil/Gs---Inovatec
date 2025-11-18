@@ -4,6 +4,11 @@ import codando from "../../assets/codando.png";
 import proxpag from "../../assets/proxpage.png";
 import Marcado from "../../assets/marcado.png";
 import Cards from "../../components/Cards.jsx";
+import Comentarios from "../../components/Comentarios.jsx";
+import Passar from "../../assets/Passar.png";
+import Passare from "../../assets/PassarE.png";
+import Flag from "../../assets/Banner.svg";
+import Final from "../../assets/Final.png";
 
 export default function Home() {
   return (
@@ -58,7 +63,7 @@ export default function Home() {
         <img className="w-[46rem] h-[31rem]" src={escritorio} alt="Pessoas no escritorio"/>
         <img className="w-[27rem] h-[42.5rem]" src={codando} alt="codigo aberto"/>
       </div>
-      </div>
+    </div>
     
       <div className=" mt-20 bg-[#222222] pt-15 w-[100%] flex flex-col items-center pb-15 rounded-4xl border border-[#3A3A3C]">
         <div className="flex flex-col">
@@ -80,11 +85,35 @@ export default function Home() {
             <Cards/>
           </div>
         </div> 
-      </div>
+    </div>
 
-      
+    <div>
+      <div className="flex flex-row justify-center mt-40 mb-18 gap-8">
+        <Comentarios/>
+        <Comentarios/>
+        <Comentarios/>
+      </div>
+    </div>
+    <div className="flex flex-row gap-5 mb-20">
+      <button className=" text-black border border-[#FEFEFE] h-[2.7rem] w-[2.7rem] flex rounded-full justify-center items-center"><img src={Passare} alt="" /></button>
+      <button className=" text-black border border-[#FEFEFE] h-[2.7rem] w-[2.7rem] flex rounded-full justify-center items-center"><img src={Passar} alt="" /></button>
+    </div>
+
+    <div className="w-{1550px} mb-10">
+      <img src={Flag} alt="" />
+    </div>
+
+    <div className="flex flex-row items-center justify-between w-[75rem] mb-20">
+      <div className="flex flex-col">
+        <h2>Fale Conosco!</h2>
+        <p className="w-142 mt-5 mb-10">Sua opinião importa para nós. Envie sugestões, dúvidas ou melhorias para ajudar a tornar a InovaTec uma rede ainda mais útil e conectada. Estamos aqui para ouvir e aprimorar cada detalhe.</p>
+        <button className="border border-[#FEFEFE] w-[27.9rem] h-[4rem] rounded-full flex justify-between items-center pl-4 pr-2">Sua dúvida aqui <button className="bg-[#FEFEFE] text-[#0A0A0A] w-[8.6rem] h-[2.9rem] rounded-full">Enviar</button></button>
+      </div>
+      <div>
+        <img src={Final} alt="" />
+      </div>
+    </div>
 
     </section>
-    
   );
 }
