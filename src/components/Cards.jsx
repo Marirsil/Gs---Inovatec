@@ -13,7 +13,7 @@ export default function Cards({ nome = "Vitor", cargo = "eng. software", descric
     >
       <div className="flex flex-col">
         <div className="flex flex-row gap-10 pb-5">
-          <div className="bg-black rounded-full overflow-hidden">
+          <div className="rounded-full overflow-hidden">
             <img src={imageUrl} alt={nome} className="w-12 h-12 object-cover rounded-full" />
           </div>
           <div className="flex justify-center flex-col">

@@ -1,3 +1,5 @@
+import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import Inicio from "../../components/Inicio.jsx";
 import escritorio from "../../assets/escritorio.png";
 import codando from "../../assets/codando.png";
@@ -10,10 +12,27 @@ import Passare from "../../assets/PassarE.png";
 import Banner from "../../assets/Banner.svg";
 import Final from "../../assets/Final.png";
 import Footer from "../../components/Footer.jsx";
+import { gerarProfissionais } from "../../data/profissionaisData.js";
 
 export default function Home() {
+  const [duvida, setDuvida] = useState("");
+
+  // Pegar os primeiros 6 profissionais para os cards
+  const profissionaisCards = useMemo(() => {
+    const todos = gerarProfissionais();
+    return todos.slice(0, 6);
+  }, []);
+
+  const handleEnviarDuvida = (e) => {
+    e.preventDefault();
+    if (duvida.trim()) {
+      alert("Obrigado pela sua mensagem! Vamos responder em breve.");
+      setDuvida("");
+    }
+  };
+
   return (
-    <section className="flex justify-center w-[100vw] flex-col items-center">
+    <section className="flex justify-center w-full flex-col items-center overflow-x-hidden">
       
       <Inicio/>
 
@@ -73,23 +92,28 @@ export default function Home() {
               <h2  className="relative w-95 z-10">Confira os perfis <img className="absolute top-0 right-0 -z-10 h-[3.8rem] w-[14rem]" src={Marcado} alt="marcado da frase"/></h2>
             </div>
             <div>
-              <button className="flex w-[12.18rem] h-[3.5rem] bg-white text-[#0A0A0A] items-center justify-between px-3 rounded-full pl-10">Ver todos <div className="bg-[#9A4FF5] rounded-full h-[2.37rem] w-[2.37rem] flex justify-center items-center"><img src={proxpag} alt="" /></div></button>
+              <Link to="/perfis">
+                <button className="flex w-[12.18rem] h-[3.5rem] bg-white text-[#0A0A0A] items-center justify-between px-3 rounded-full pl-10">Ver todos <div className="bg-[#9A4FF5] rounded-full h-[2.37rem] w-[2.37rem] flex justify-center items-center"><img src={proxpag} alt="" /></div></button>
+              </Link>
             </div>
           </div>
         
           <div className="grid grid-cols-3 gap-6">
-            <Cards/>
-            <Cards/>
-            <Cards/>
-            <Cards/>
-            <Cards/>
-            <Cards/>
+            {profissionaisCards.map((profissional) => (
+              <Cards
+                key={profissional.id}
+                id={profissional.id}
+                nome={profissional.nome}
+                cargo={profissional.cargo}
+                descricao={profissional.descricao}
+              />
+            ))}
           </div>
         </div> 
     </div>
 
-    <div>
-      <div className="flex flex-row justify-center mt-40 mb-18 gap-8">
+    <div className="w-full overflow-x-hidden">
+      <div className="flex flex-row justify-center mt-40 mb-18 gap-8 w-full max-w-[100vw] px-4">
         <Comentarios/>
         <Comentarios/>
         <Comentarios/>
@@ -109,10 +133,19 @@ export default function Home() {
       <div className="flex flex-col">
         <h2>Fale Conosco!</h2>
         <p className="w-142 mt-5 mb-10">Sua opinião importa para nós. Envie sugestões, dúvidas ou melhorias para ajudar a tornar a InovaTec uma rede ainda mais útil e conectada. Estamos aqui para ouvir e aprimorar cada detalhe.</p>
-        <button className="border border-[#FEFEFE] w-[27.9rem] h-[4rem] rounded-full flex justify-between items-center pl-4 pr-2">Sua dúvida aqui <button className="bg-[#FEFEFE] text-[#0A0A0A] w-[8.6rem] h-[2.9rem] rounded-full">Enviar</button></button>
+        <form onSubmit={handleEnviarDuvida} className="border border-[#FEFEFE] w-[27.9rem] h-[4rem] rounded-full flex justify-between items-center pl-4 pr-2 bg-transparent">
+          <input
+            type="text"
+            value={duvida}
+            onChange={(e) => setDuvida(e.target.value)}
+            placeholder="Sua dúvida aqui"
+            className="flex-1 bg-transparent outline-none text-[#0A0A0A] placeholder:text-gray-500"
+          />
+          <button type="submit" className="bg-[#FEFEFE] text-[#0A0A0A] w-[8.6rem] h-[2.9rem] rounded-full">Enviar</button>
+        </form>
       </div>
       <div>
-        <img src={Final} alt="" />
+        <img src={Final} alt="Moça dando ok com a mao" />
       </div>
     </div>
 

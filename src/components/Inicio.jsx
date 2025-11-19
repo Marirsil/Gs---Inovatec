@@ -3,9 +3,10 @@ import aspas from "../assets/aspas.svg";
 import star from "../assets/star.png";
 import imgcapa from "../assets/fotocapa.png";
 import fivestars from "../assets/fivestar.svg";
+import { Link } from "react-router-dom";
 
 
-export default function Home() {
+export default function Inicio() {
   return (
     <div className="flex flex-col items-center"> 
   
@@ -20,7 +21,9 @@ export default function Home() {
       <div className="flex flex-row justify-center mt-5">
         <div className="flex flex-col w-[22rem] gap-8 mt-20">
           <p>A InovaTec aproxima pessoas, interesses e trajetórias, permitindo criar conexões reais, descobrir novos talentos e explorar perfis inspiradores. Tudo em uma rede social moderna e fácil de navegar.</p>
-          <button className="border border-black py-4 w-60 rounded-full">Conheça colaboradores</button>
+          <Link to="/perfis">
+            <button className="border border-black py-4 w-60 rounded-full">Conheça colaboradores</button>
+          </Link>
         </div>
 
         <div>
