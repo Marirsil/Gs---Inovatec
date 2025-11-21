@@ -14,7 +14,7 @@ export default function Home() {
 
         <div className="text-[#FEFEFE]">
           <p className="text-lg font-semibold">Contato</p>
-          <div className="text-sm flex gap-4 flex-col mt-5">
+          <div className="text-sm flex gap-4 flex-col mt-5 ">
           <p>Fale conosco</p>
           <p>Central de suporte</p>
           <p>Consultar ajuda</p>
