@@ -13,8 +13,10 @@ import Banner from "../../assets/Banner.svg";
 import Final from "../../assets/Final.png";
 import Footer from "../../components/Footer.jsx";
 import { gerarProfissionais } from "../../data/profissionaisData.js";
+import { useTheme } from "../../context/ThemeProvider.jsx";
 
 export default function Home() {
+  const { DarkMode,toggleDarkMode} = useTheme();
   const [duvida, setDuvida] = useState("");
 
   // Pegar os primeiros 6 profissionais para os cards
@@ -32,42 +34,41 @@ export default function Home() {
   };
 
   return (
-    <section className="flex justify-center w-full flex-col items-center overflow-x-hidden">
+    <section className="flex justify-center w-full flex-col items-center overflow-x-hidden dark:bg-[#fefefe]">
       
       <Inicio/>
 
-      <div className="flex flex-row justify-center gap-50 mt-20 border border-[#4C5445] py-10 w-[75rem] rounded-4xl bg-[radial-gradient(circle_at_left,_rgba(84,15,101,0.3)_0%,_transparent_80%)]">
-      <div className="flex text-white flex-col items-center ">
+      <div className="flex flex-row justify-center gap-50 mt-20 border border-[#4C5445] py-10 w-[75rem] rounded-4xl bg-[radial-gradient(circle_at_left,_rgba(84,15,101,0.3)_0%,_transparent_80%)] dark:bg-[#A2A2A2] ">
+      <div className="flex text-white flex-col items-center dark:text-[#fefefe]">
         <div className="flex">
-          <h3 className="text-4xl">
+          <h3 className="text-4xl dark:text-[#fefefe] ">
           2000<span className="text-[#AA65FF]">+</span>
           </h3>
-        </div>
+        </div >
         <p>Inscritos</p>
       </div>
 
-      <div className="flex text-white flex-col items-center ">
+      <div className="flex text-white flex-col items-center dark:text-[#fefefe]">
         <div className="flex">
-          <h3 className="text-4xl">
+          <h3 className="text-4xl dark:text-[#fefefe]">
           10<span className="text-[#AA65FF]">+</span>
           </h3>
         </div>
         <p>Empresas</p>
       </div>
 
-      <div className="flex text-white flex-col items-center ">
+      <div className="flex text-white flex-col items-center dark:text-[#fefefe] ">
         <div className="flex">
-          <h3 className="text-4xl">
+          <h3 className="text-4xl dark:text-[#fefefe]">
           800<span className="text-[#AA65FF]">+</span>
           </h3>
         </div>
         <p>Colaboradores</p>
       </div>
 
-      <div className="flex text-white flex-col items-center ">
-        <div className="flex">
-          <h3 className="text-4xl">
-          150M<span className="text-[#AA65FF]">+</span>
+      <div className="flex text-white flex-col items-center dark:text-[#fefefe]">
+        <div className="flex ">
+          <h3 className="text-4xl dark:text-[#fefefe]">150M<span className="text-[#AA65FF]">+</span>
           </h3>
         </div>
         <p>Vidas mudadas</p>
@@ -75,7 +76,7 @@ export default function Home() {
     </div>
 
     <div className="">
-      <div className="flex flex-row justify-between mt-25 mb-16 w-[75rem]">
+      <div className="flex flex-row justify-between mt-25 mb-16 w-[75rem] dark:text-[#0a0a0a]">
         <h2 className="w-110">Conexões que ampliam seu futuro</h2>
         <p className="w-120 pt-4">A plataforma apresenta perfis completos, mostrando formações, experiências e interesses. Assim, você encontra pessoas com afinidades, faz conexões relevantes e amplia sua rede profissional.</p>
       </div>
@@ -85,11 +86,11 @@ export default function Home() {
       </div>
     </div>
     
-      <div className=" mt-20 bg-[#222222] pt-15 w-[100%] flex flex-col items-center pb-15 rounded-4xl border border-[#3A3A3C]">
+      <div className=" mt-20 bg-[#222222] dark:bg-[#A2A2A2] pt-15 w-[100%] flex flex-col items-center pb-15 rounded-4xl border border-[#3A3A3C]">
         <div className="flex flex-col">
           <div className="flex flex-row justify-between w-[75rem] mb-15">
             <div className="">
-              <h2  className="relative w-95 z-10">Confira os perfis <img className="absolute top-0 right-0 -z-10 h-[3.8rem] w-[14rem]" src={Marcado} alt="marcado da frase"/></h2>
+              <h2  className="relative w-95 z-10 dark:bg-[#A2A2A2]">Confira os perfis <img className="absolute top-0 right-0 -z-10 h-[3.8rem] w-[14rem]" src={Marcado} alt="marcado da frase"/></h2>
             </div>
             <div>
               <Link to="/perfis">
@@ -130,17 +131,17 @@ export default function Home() {
 
 
     <div className="flex flex-row items-center justify-between w-[75rem]">
-      <div className="flex flex-col">
+      <div className="flex flex-col dark:text-[#0A0A0A]">
         <h2>Fale Conosco!</h2>
         <p className="w-142 mt-5 mb-10">Sua opinião importa para nós. Envie sugestões, dúvidas ou melhorias para ajudar a tornar a InovaTec uma rede ainda mais útil e conectada. Estamos aqui para ouvir e aprimorar cada detalhe.</p>
-        <form onSubmit={handleEnviarDuvida} className="border border-[#FEFEFE] w-[27.9rem] h-[4rem] rounded-full flex justify-between items-center pl-4 pr-2 bg-transparent">
+        <form onSubmit={handleEnviarDuvida} className="border border-[#FEFEFE] dark:border-[#0A0A0A] w-[27.9rem] h-[4rem] rounded-full flex justify-between items-center pl-4 pr-2 bg-transparent">
           <input
             type="text"
             value={duvida}
             onChange={(e) => setDuvida(e.target.value)}
-            placeholder="Sua dúvida aqui"
+            placeholder ="Sua dúvida aqui"
             className="flex-1 bg-transparent outline-none text-[#0A0A0A] placeholder:text-gray-500"
-          />
+            />
           <button type="submit" className="bg-[#FEFEFE] text-[#0A0A0A] w-[8.6rem] h-[2.9rem] rounded-full">Enviar</button>
         </form>
       </div>

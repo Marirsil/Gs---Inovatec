@@ -105,27 +105,27 @@ export default function Home() {
   };
 
   return (
-    <div className="flex justify-center w-[100vw] flex-col items-center">
+    <div className="flex justify-center w-[100vw] flex-col items-center dark:bg-[#fefefe]">
       <Inicio/>
 
       {/* Barra de pesquisa */}
-      <div className="relative rounded-xl w-[75rem] mt-12 mb-6">
+      <div className="relative rounded-xl w-[75rem] mt-12 mb-6 ">
         <input
           type="text"
           placeholder="Pesquisar por nome..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full bg-[radial-gradient(circle_at_left,_rgba(84,15,101,0.3)_0%,_transparent_80%)] bg-zinc-900 text-white px-4 py-3 rounded-xl border border-[#4C5445] focus:outline-none focus:border-[#AA65FF]"
+          className="w-full bg-[radial-gradient(circle_at_left,_rgba(84,15,101,0.3)_0%,_transparent_80%)] dark:bg-[#A2A2A2] bg-zinc-900 text-white px-4 py-3 rounded-xl border border-[#4C5445] focus:outline-none focus:border-[#AA65FF]"
         />
       </div>
 
-      <div className=" relative rounded-xl w-[75rem] mt-6">
+      <div className=" relative rounded-xl w-[75rem] mt-6 " >
         <div className="flex flex-row gap-10 items-center justify-center">
-          <div className="relative w-[22.5rem] border border-[#4C5445] rounded-xl">
+          <div className="relative w-[22.5rem] border border-[#4C5445]  rounded-xl ">
             <select 
               value={cidadeFiltro}
               onChange={(e) => setCidadeFiltro(e.target.value)}
-              className=" appearance-none w-full bg-[radial-gradient(circle_at_left,_rgba(84,15,101,0.3)_0%,_transparent_80%)] bg-zinc-900 text-white px-4 py-3 rounded-xl pr-10 focus:outline-none cursor-pointer " 
+              className=" appearance-none w-full bg-[radial-gradient(circle_at_left,_rgba(84,15,101,0.3)_0%,_transparent_80%)] dark:bg-[#A2A2A2] bg-zinc-900 text-white px-4 py-3 rounded-xl pr-10 focus:outline-none cursor-pointer " 
             >
               <option value="">Cidade</option>
               {cidadesUnicas.map((cidade) => (
@@ -139,7 +139,7 @@ export default function Home() {
             <select 
               value={areaFiltro}
               onChange={(e) => setAreaFiltro(e.target.value)}
-              className=" appearance-none w-full bg-[radial-gradient(circle_at_left,_rgba(84,15,101,0.3)_0%,_transparent_80%)] bg-zinc-900 text-white px-4 py-3 rounded-xl pr-10 focus:outline-none cursor-pointer " 
+              className=" appearance-none w-full bg-[radial-gradient(circle_at_left,_rgba(84,15,101,0.3)_0%,_transparent_80%)] dark:bg-[#A2A2A2] bg-zinc-900 text-white px-4 py-3 rounded-xl pr-10 focus:outline-none cursor-pointer " 
             >
               <option value="">Área</option>
               {areasUnicas.map((area) => (
@@ -153,7 +153,7 @@ export default function Home() {
             <select 
               value={tecnologiaFiltro}
               onChange={(e) => setTecnologiaFiltro(e.target.value)}
-              className=" appearance-none w-full bg-[radial-gradient(circle_at_left,_rgba(84,15,101,0.3)_0%,_transparent_80%)] bg-zinc-900 text-white px-4 py-3 rounded-xl pr-10 focus:outline-none cursor-pointer " 
+              className=" appearance-none w-full bg-[radial-gradient(circle_at_left,_rgba(84,15,101,0.3)_0%,_transparent_80%)] dark:bg-[#A2A2A2] bg-zinc-900 text-white px-4 py-3 rounded-xl pr-10 focus:outline-none cursor-pointer " 
             >
               <option value="">Tecnologia</option>
               {tecnologiasUnicas.map((tech) => (

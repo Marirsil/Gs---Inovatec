@@ -12,10 +12,10 @@ export default function ProfileModal({ profissional, onClose, onRecomendar, onEn
 
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 "
       onClick={handleBackdropClick}
     >
-      <div className="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative">
+      <div className="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative ">
         {/* Botão de fechar */}
         <button
           onClick={onClose}
@@ -24,11 +24,11 @@ export default function ProfileModal({ profissional, onClose, onRecomendar, onEn
           ×
         </button>
 
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row  ">
           {/* Coluna Esquerda - Informações Pessoais */}
-          <div className="w-full md:w-1/3 p-8 flex flex-col items-center border-r border-gray-200">
+          <div className="w-full md:w-1/3 p-8 flex flex-col items-center border-r border-gray-200 ">
             {/* Foto de perfil */}
-            <div className="w-32 h-32 rounded-full bg-gray-300 mb-6 overflow-hidden">
+            <div className="w-32 h-32 rounded-full bg-gray-300 mb-6 overflow-hidden ">
               <img
                 src={imageUrl}
                 alt={profissional.nome}
@@ -37,21 +37,21 @@ export default function ProfileModal({ profissional, onClose, onRecomendar, onEn
             </div>
 
             {/* Nome e Cargo */}
-            <h2 className="text-2xl font-bold text-black mb-2 text-center">
+            <h2 className="text-2xl font-bold text-black mb-2 text-center ">
               {profissional.nomeCompleto || profissional.nome}
             </h2>
-            <p className="text-gray-600 mb-4 text-center">{profissional.cargo}</p>
+            <p className="text-gray-600 mb-4 text-center ">{profissional.cargo}</p>
 
             {/* Localização */}
             <p className="text-gray-500 mb-6 text-center">{profissional.localizacao}</p>
 
             {/* Sobre */}
-            <p className="text-sm text-gray-600 mb-8 text-center">
+            <p className="text-sm text-gray-600 mb-8 text-center ">
               {profissional.descricao}
             </p>
 
             {/* Botões de Ação */}
-            <div className="w-full space-y-4 mt-auto">
+            <div className="w-full space-y-4 mt-auto ">
               <button
                 onClick={onRecomendar}
                 className="w-full bg-gradient-to-r from-[#AA65FF] to-[#8B4FD9] text-white py-3 px-6 rounded-lg font-semibold hover:from-[#9A55EF] hover:to-[#7B3FC9] transition-all shadow-lg"
@@ -70,10 +70,10 @@ export default function ProfileModal({ profissional, onClose, onRecomendar, onEn
           {/* Coluna Direita - Informações Profissionais */}
           <div className="w-full md:w-2/3 p-8">
             {/* Formação Acadêmica */}
-            <div className="mb-8">
-              <div className="flex items-center gap-3 mb-4">
+            <div className="mb-8  ">
+              <div className="flex items-center gap-3 mb-4 ">
                 <svg
-                  className="w-6 h-6 text-black"
+                  className="w-6 h-6 text-black "
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -97,20 +97,20 @@ export default function ProfileModal({ profissional, onClose, onRecomendar, onEn
                     d="M12 14v7M5 12h14"
                   />
                 </svg>
-                <h3 className="text-xl font-bold text-black">Formação Acadêmica</h3>
+                <h3 className="text-xl font-bold text-black ">Formação Acadêmica</h3>
               </div>
-              <div className="ml-9">
+              <div className="ml-9 ">
                 <p className="text-black font-semibold">{profissional.formacao.instituicao}</p>
-                <p className="text-gray-600">{profissional.formacao.curso}</p>
-                <p className="text-gray-500 text-sm">{profissional.formacao.periodo}</p>
+                <p className="text-gray-600 ">{profissional.formacao.curso}</p>
+                <p className="text-gray-500 text-sm ">{profissional.formacao.periodo}</p>
               </div>
             </div>
 
             {/* Experiências */}
             <div className="mb-8">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-4 ">
                 <svg
-                  className="w-6 h-6 text-black"
+                  className="w-6 h-6 text-black "
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -122,20 +122,20 @@ export default function ProfileModal({ profissional, onClose, onRecomendar, onEn
                     d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <h3 className="text-xl font-bold text-black">Experiências</h3>
+                <h3 className="text-xl font-bold text-black ">Experiências</h3>
               </div>
               <div className="ml-9">
-                <p className="text-black font-semibold">{profissional.experiencia.empresa}</p>
-                <p className="text-gray-600">{profissional.experiencia.cargo}</p>
-                <p className="text-gray-500 text-sm">{profissional.experiencia.periodo}</p>
+                <p className="text-black font-semibold ">{profissional.experiencia.empresa}</p>
+                <p className="text-gray-600  ">{profissional.experiencia.cargo}</p>
+                <p className="text-gray-500 text-sm ">{profissional.experiencia.periodo}</p>
               </div>
             </div>
 
             {/* Habilidades Técnicas */}
             <div className="mb-8">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-4 ">
                 <svg
-                  className="w-6 h-6 text-black"
+                  className="w-6 h-6 text-black  "
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -153,9 +153,9 @@ export default function ProfileModal({ profissional, onClose, onRecomendar, onEn
                     d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <h3 className="text-xl font-bold text-black">Habilidades Técnicas</h3>
+                <h3 className="text-xl font-bold text-black ">Habilidades Técnicas</h3>
               </div>
-              <div className="ml-9 flex flex-wrap gap-2">
+              <div className="ml-9 flex flex-wrap gap-2 ">
                 {profissional.habilidadesTecnicas.map((habilidade, index) => (
                   <span
                     key={index}
@@ -171,7 +171,7 @@ export default function ProfileModal({ profissional, onClose, onRecomendar, onEn
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <svg
-                  className="w-6 h-6 text-black"
+                  className="w-6 h-6 text-black "
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -183,10 +183,10 @@ export default function ProfileModal({ profissional, onClose, onRecomendar, onEn
                     d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                   />
                 </svg>
-                <h3 className="text-xl font-bold text-black">Soft Skills e Hobbies</h3>
+                <h3 className="text-xl font-bold text-black ">Soft Skills e Hobbies</h3>
               </div>
               <div className="ml-9">
-                <p className="text-gray-600 text-sm">{profissional.softSkills}</p>
+                <p className="text-gray-600 text-sm ">{profissional.softSkills}</p>
               </div>
             </div>
           </div>
